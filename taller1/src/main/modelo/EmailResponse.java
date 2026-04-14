@@ -1,4 +1,4 @@
-package modelo;
+package main.modelo;
 
 public class EmailResponse {private boolean done;
     private String errorMessage;
