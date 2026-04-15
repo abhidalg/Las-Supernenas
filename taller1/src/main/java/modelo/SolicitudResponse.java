@@ -11,6 +11,11 @@ public class SolicitudResponse {
         this.errorMessage = errorMessage;
         this.data = data;
     }
+
+    public SolicitudResponse() {
+
+    }
+
     public boolean isDone() { return done; }
     public void setDone(boolean done) { this.done = done; }
 
