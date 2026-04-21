@@ -10,14 +10,11 @@ import static org.junit.jupiter.api.Assertions.*;
 class SolicitudTest {
     @Test
     void testConstructorYGetters() {
-        // Preparar datos
         List<Integer> cantidades = Arrays.asList(1, 2, 3);
         List<String> entidades = Arrays.asList("Rojo", "Verde", "Azul");
 
-        // Ejecutar
         Solicitud solicitud = new Solicitud(cantidades, entidades);
 
-        // Comprobar
         assertEquals(cantidades, solicitud.getCantidadesIniciales(), "Las cantidades iniciales no coinciden");
         assertEquals(entidades, solicitud.getNombreEntidades(), "Los nombres de entidades no coinciden");
     }

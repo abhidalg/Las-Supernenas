@@ -27,4 +27,4 @@ public class SolicitudResponse {
 
     public boolean isData() { return data; }
     public void setData(boolean data) { this.data = data; }
-}
+    }

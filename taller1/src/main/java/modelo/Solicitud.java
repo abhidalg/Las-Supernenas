@@ -9,6 +9,11 @@ public class Solicitud {
         this.cantidadesIniciales=cantidadesIniciales;
         this.nombreEntidades=nombreEntidades;
     }
+
+    public Solicitud() {
+
+    }
+
     public List<Integer> getCantidadesIniciales(){
         return this.cantidadesIniciales;
     }
