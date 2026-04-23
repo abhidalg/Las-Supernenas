@@ -1,8 +1,0 @@
-### Prueba de Token
-POST http://localhost:8080/Solicitud/Solicitar?nombreUsuario=Victoria
-Content-Type: application/json
-
-{
-  "id": 1,
-  "descripcion": "Peticion de prueba"
-}
