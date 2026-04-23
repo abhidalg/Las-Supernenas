@@ -1,0 +1,8 @@
+modelo\EmailResponse.class
+modelo\ResultsResponse.class
+logica\Taller1Application.class
+modelo\SolicitudResponse.class
+logica\Controller.class
+modelo\ProblemDetails.class
+modelo\Solicitud.class
+logica\Service.class

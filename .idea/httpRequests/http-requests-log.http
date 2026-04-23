@@ -1,0 +1,96 @@
+POST http://localhost:8080/Solicitud/Solicitar?nombreUsuario=Victoria
+Content-Type: application/json
+Content-Length: 52
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": 1,
+  "descripcion": "Peticion de prueba"
+}
+
+<> 2026-04-23T104256.200.json
+
+###
+
+POST http://localhost:8080/Solicitud/Solicitar?nombreUsuario=Victoria
+Content-Type: application/json
+Content-Length: 52
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": 1,
+  "descripcion": "Peticion de prueba"
+}
+
+<> 2026-04-23T103545.200.json
+
+###
+
+POST http://localhost:8080/Solicitud/Solicitar?nombreUsuario=Victoria
+Content-Type: application/json
+Content-Length: 52
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": 1,
+  "descripcion": "Peticion de prueba"
+}
+
+<> 2026-04-23T103543.200.json
+
+###
+
+POST http://localhost:8080/Solicitud/Solicitar?nombreUsuario=Victoria
+Content-Type: application/json
+Content-Length: 52
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": 1,
+  "descripcion": "Peticion de prueba"
+}
+
+<> 2026-04-23T103541.200.json
+
+###
+
+POST http://localhost:8080/Solicitud/Solicitar?nombreUsuario=Victoria
+Content-Type: application/json
+Content-Length: 52
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": 1,
+  "descripcion": "Peticion de prueba"
+}
+
+<> 2026-04-23T102711.200.json
+
+###
+
+POST http://localhost:8080/Solicitud/Solicitar?nombreUsuario=Victoria
+Content-Type: application/json
+Content-Length: 52
+User-Agent: IntelliJ HTTP Client/IntelliJ IDEA 2025.2.5
+Accept-Encoding: br, deflate, gzip, x-gzip
+Accept: */*
+
+{
+  "id": 1,
+  "descripcion": "Peticion de prueba"
+}
+
+<> 2026-04-23T101715.200.json
+
+###
+
