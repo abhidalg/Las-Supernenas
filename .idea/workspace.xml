@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea423a5a-a550-4541-bf70-02f430cdd6eb" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taller1/prueba.http" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/taller1/src/main/java/logica/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/Las-Supernenas.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Las-Supernenas.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ea423a5a-a550-4541-bf70-02f430cdd6eb" name="Changes" comment="http">
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/taller1/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/taller1/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/taller1/src/main/java/logica/Taller1Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/taller1/src/main/java/logica/Taller1Application.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/taller1/src/test/java/modelo/ControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/taller1/src/test/java/modelo/ControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/taller1/src/test/java/modelo/SolicitudControllerTest.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/taller1/src/test/java/modelo/SolicitudResponseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/taller1/src/test/java/modelo/SolicitudResponseTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/taller1/src/test/java/modelo/SolicitudTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/taller1/src/test/java/modelo/SolicitudTest.java" afterDir="false" />
     </list>
@@ -63,6 +56,7 @@
   "keyToString": {
     "Application.Taller1Application.executor": "Run",
     "HTTP Request.prueba | Prueba de Token.executor": "Run",
+    "JUnit.ControllerTest.solicitar_ConDatosValidos_Retorna201.executor": "Run",
     "Maven.taller1 [clean].executor": "Run",
     "Maven.taller1 [install].executor": "Run",
     "Maven.taller1 [org.springframework.boot:spring-boot-maven-plugin:3.2.4:run].executor": "Run",
@@ -98,7 +92,7 @@
       </map>
     </option>
   </component>
-  <component name="RunManager" selected="HTTP Request.prueba | Prueba de Token">
+  <component name="RunManager" selected="JUnit.ControllerTest.solicitar_ConDatosValidos_Retorna201">
     <configuration name="Taller1Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="logica.Taller1Application" />
       <module name="Las-Supernenas" />
@@ -115,6 +109,22 @@
     <configuration name="prueba | Prueba de Token" type="HttpClient.HttpRequestRunConfigurationType" factoryName="HTTP Request" temporary="true" nameIsGenerated="true" path="$PROJECT_DIR$/taller1/prueba.http" executionIdentifier="Prueba de Token" runType="Run single request">
       <method v="2" />
     </configuration>
+    <configuration name="ControllerTest.solicitar_ConDatosValidos_Retorna201" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="taller1" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="modelo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="modelo" />
+      <option name="MAIN_CLASS_NAME" value="modelo.ControllerTest" />
+      <option name="METHOD_NAME" value="solicitar_ConDatosValidos_Retorna201" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Taller1Application" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" temporary="true" nameIsGenerated="true">
       <module name="taller1" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="logica.Taller1Application" />
@@ -130,6 +140,7 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ControllerTest.solicitar_ConDatosValidos_Retorna201" />
         <item itemvalue="HTTP Request.prueba | Prueba de Token" />
         <item itemvalue="Spring Boot.Taller1Application" />
         <item itemvalue="Application.Taller1Application" />
@@ -152,11 +163,24 @@
       <option name="presentableId" value="Default" />
       <updated>1776930493485</updated>
       <workItem from="1776930495486" duration="2069000" />
-      <workItem from="1776932581205" duration="2351000" />
+      <workItem from="1776932581205" duration="3837000" />
     </task>
+    <task id="LOCAL-00001" summary="http">
+      <option name="closed" value="true" />
+      <created>1776935008852</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1776935008852</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="http" />
+    <option name="LAST_COMMIT_MESSAGE" value="http" />
   </component>
 </project>

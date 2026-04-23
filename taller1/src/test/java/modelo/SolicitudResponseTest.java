@@ -1,4 +1,4 @@
-/*package modelo;
+package modelo;
 
 import logica.Service;
 import org.junit.jupiter.api.Test;
@@ -27,4 +27,4 @@ class SolicitudResponseTest {
         assertTrue(response.getTokenSolicitud() >= 10000000);
         System.out.println("Token generado con éxito: " + response.getTokenSolicitud());
     }
-}*/
+}

@@ -1,7 +1,7 @@
-/*import com.fasterxml.jackson.databind.ObjectMapper;
+package modelo;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
 import logica.Service;
-import modelo.Solicitud;
-import modelo.SolicitudResponse;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -78,4 +78,4 @@ public class ControllerTest {
                         .content(jsonMalformado))
                 .andExpect(status().isBadRequest()); // Verifica el 400 Bad Request
     }
-}*/
+}
