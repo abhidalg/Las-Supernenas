@@ -70,4 +70,34 @@ public class Service {
                 .collect(Collectors.joining("\n"));
         return ancho + "\n" + celdas;
     }
+    public Map<String, Object> obtenerDatosGrid(int token) {
+        return repositorio.findByToken(token).map(entidad -> {
+            String[] lineas = entidad.getResultadoData().split("\n");
+            int count = Integer.parseInt(lineas[0].trim());
+            int maxTime = 0;
+
+            Map<String, String> colors = new HashMap<>();
+            for (int i = 1; i < lineas.length; i++) {
+                String linea = lineas[i].trim();
+                if (linea.isEmpty()) continue;
+                String[] partes = linea.split(",");
+                if (partes.length < 4) continue;
+
+                int t = Integer.parseInt(partes[0]);
+                int y = Integer.parseInt(partes[1]);
+                int x = Integer.parseInt(partes[2]);
+                String color = partes[3];
+
+                colors.put(t + "-" + y + "-" + x, color);
+                if (t > maxTime) maxTime = t;
+            }
+
+            Map<String, Object> resultado = new HashMap<>();
+            resultado.put("count", count);
+            resultado.put("colors", colors);
+            resultado.put("maxTime", maxTime);
+            return resultado;
+
+        }).orElse(null);
+    }
 }
