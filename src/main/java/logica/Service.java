@@ -14,20 +14,32 @@ import java.util.stream.IntStream;
 
 /**
  * Clase de servicio encargada de la lógica de negocio del sistema.
- * Gestiona la generación de tokens aleatorios y el almacenamiento de resultados simulados.
+ * Gestiona la generación de tokens aleatorios, la simulación de resultados en formato de cuadrícula (grid)
+ * y el almacenamiento de las solicitudes tanto en memoria temporal como en la base de datos.
  */
 public class Service {
+    /**
+     * Mapa en memoria utilizado para almacenar temporalmente los resultados simulados asociados a un token.
+     */
     private static Map<Integer, String> memoria = new HashMap<>();
+
+    /**
+     * Generador de números aleatorios para la creación de tokens y datos de la cuadrícula.
+     */
     private Random random = new Random();
 
+    /**
+     * Repositorio para la persistencia de las entidades de solicitud en la base de datos.
+     */
     private SolicitudRepositorio repositorio;
 
     /**
      * Genera un token aleatorio de 8 cifras y prepara la respuesta de la solicitud.
-     * Almacena en memoria una cadena de resultado simulado asociada al token.
-     * * @param usuario El nombre del usuario que realiza la petición.
-     * @param datos Los datos técnicos de la solicitud inicial.
-     * @return Una respuesta estructurada con el token de seguimiento y estado de éxito.
+     * Almacena una cadena de resultado simulado asociada al token en memoria y en la base de datos.
+     *
+     * @param usuario El nombre del usuario que realiza la petición.
+     * @param datos   Los datos técnicos o iniciales de la solicitud.
+     * @return Una respuesta estructurada ({@link SolicitudResponse}) con el token de seguimiento y el estado de éxito.
      */
     public SolicitudResponse devolverToken(String usuario, Solicitud datos) {
         int token = 10000000 + random.nextInt(90000000);
@@ -51,6 +63,14 @@ public class Service {
 
         return respuesta;
     }
+
+    /**
+     * Genera una cadena de texto que simula los resultados de una cuadrícula (grid) aleatoria.
+     * La cuadrícula incluye dimensiones, marcos de tiempo (frames) y puntos de colores generados al azar.
+     *
+     * @return Un {@link String} que contiene el ancho de la cuadrícula en la primera línea,
+     *         seguido de múltiples líneas con el formato {@code t,y,x,color} ordenadas de forma ascendente por el tiempo (t).
+     */
     public String generarGridAleatorio() {
         int ancho = 12;
         int framesDeTiempo = 50;
@@ -70,6 +90,15 @@ public class Service {
                 .collect(Collectors.joining("\n"));
         return ancho + "\n" + celdas;
     }
+
+    /**
+     * Recupera y procesa los datos de la cuadrícula asociados a un token específico desde la base de datos.
+     * Extrae la dimensión base, calcula el tiempo máximo y mapea las coordenadas de colores para su uso en la vista.
+     *
+     * @param token El identificador único de la solicitud que contiene los resultados del grid.
+     * @return Un {@link Map} que contiene la dimensión ({@code count}), el tiempo máximo ({@code maxTime})
+     *         y el mapa de coordenadas a colores ({@code colors}), o {@code null} si no se encuentra el token.
+     */
     public Map<String, Object> obtenerDatosGrid(int token) {
         return repositorio.findByToken(token).map(entidad -> {
             String[] lineas = entidad.getResultadoData().split("\n");
