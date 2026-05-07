@@ -1,9 +1,14 @@
 package logica;
 
+
 import interfaz.SolicitudRepositorio;
 import modelo.Solicitud;
 import modelo.SolicitudEntidad;
 import modelo.SolicitudResponse;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Comparator;
 import java.util.HashMap;
@@ -17,25 +22,31 @@ import java.util.stream.IntStream;
  * Gestiona la generación de tokens aleatorios, la simulación de resultados en formato de cuadrícula (grid)
  * y el almacenamiento de las solicitudes tanto en memoria temporal como en la base de datos.
  */
-public class Service {
-    /**
-     * Mapa en memoria utilizado para almacenar temporalmente los resultados simulados asociados a un token.
-     */
-    private static Map<Integer, String> memoria = new HashMap<>();
-
-    /**
-     * Generador de números aleatorios para la creación de tokens y datos de la cuadrícula.
-     */
-    private Random random = new Random();
+@org.springframework.stereotype.Service
+public class SolicitudService {
 
     /**
      * Repositorio para la persistencia de las entidades de solicitud en la base de datos.
      */
-    private SolicitudRepositorio repositorio;
+    private final SolicitudRepositorio repositorio;
+
+    /**
+     * Generador de números aleatorios para la creación de tokens y datos de la cuadrícula.
+     */
+    private final Random random = new Random();
+
+    /**
+     * Constructor que recibe el repositorio por inyección de dependencias de Spring.
+     *
+     * @param repositorio El repositorio JPA para persistir las solicitudes.
+     */
+    public SolicitudService(SolicitudRepositorio repositorio) {
+        this.repositorio = repositorio;
+    }
 
     /**
      * Genera un token aleatorio de 8 cifras y prepara la respuesta de la solicitud.
-     * Almacena una cadena de resultado simulado asociada al token en memoria y en la base de datos.
+     * Almacena una cadena de resultado simulado asociada al token en la base de datos.
      *
      * @param usuario El nombre del usuario que realiza la petición.
      * @param datos   Los datos técnicos o iniciales de la solicitud.
@@ -44,9 +55,7 @@ public class Service {
     public SolicitudResponse devolverToken(String usuario, Solicitud datos) {
         int token = 10000000 + random.nextInt(90000000);
         String resultadoSimulado = generarGridAleatorio();
-        memoria.put(token, resultadoSimulado);
 
-        //GUARDARLO EN LA BASE DE DATOS
         SolicitudEntidad entidad = new SolicitudEntidad();
         entidad.setNombreUsuario(usuario);
         entidad.setToken(token);
@@ -66,7 +75,6 @@ public class Service {
 
     /**
      * Genera una cadena de texto que simula los resultados de una cuadrícula (grid) aleatoria.
-     * La cuadrícula incluye dimensiones, marcos de tiempo (frames) y puntos de colores generados al azar.
      *
      * @return Un {@link String} que contiene el ancho de la cuadrícula en la primera línea,
      *         seguido de múltiples líneas con el formato {@code t,y,x,color} ordenadas de forma ascendente por el tiempo (t).
@@ -83,7 +91,7 @@ public class Service {
                     int y = r.nextInt(ancho);
                     int x = r.nextInt(ancho);
                     String color = colores[r.nextInt(colores.length)];
-                    return new Object[] {t, y, x, color};
+                    return new Object[]{t, y, x, color};
                 })
                 .sorted(Comparator.comparingInt(a -> (int) a[0]))
                 .map(a -> String.format("%d,%d,%d,%s", a[0], a[1], a[2], a[3]))
@@ -93,7 +101,6 @@ public class Service {
 
     /**
      * Recupera y procesa los datos de la cuadrícula asociados a un token específico desde la base de datos.
-     * Extrae la dimensión base, calcula el tiempo máximo y mapea las coordenadas de colores para su uso en la vista.
      *
      * @param token El identificador único de la solicitud que contiene los resultados del grid.
      * @return Un {@link Map} que contiene la dimensión ({@code count}), el tiempo máximo ({@code maxTime})
@@ -120,7 +127,6 @@ public class Service {
                 colors.put(t + "-" + y + "-" + x, color);
                 if (t > maxTime) maxTime = t;
             }
-
             Map<String, Object> resultado = new HashMap<>();
             resultado.put("count", count);
             resultado.put("colors", colors);
@@ -129,4 +135,10 @@ public class Service {
 
         }).orElse(null);
     }
+    public String obtenerGridString(int token) {
+        return repositorio.findByToken(token)
+                .map(e -> e.getResultadoData())
+                .orElse(null);
+    }
+
 }

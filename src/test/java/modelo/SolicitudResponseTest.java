@@ -1,6 +1,6 @@
 package modelo;
 
-import logica.Service;
+import logica.SolicitudService;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -17,10 +17,10 @@ class SolicitudResponseTest {
     }
     @Test
     void probarGeneracionDeToken() {
-        Service service = new Service();
+        SolicitudService solicitudService = new SolicitudService();
         Solicitud datosMock = new Solicitud();
 
-        SolicitudResponse response = service.devolverToken("usuarioPrueba", datosMock);
+        SolicitudResponse response = solicitudService.devolverToken("usuarioPrueba", datosMock);
 
 
         assertNotNull(response.getTokenSolicitud());

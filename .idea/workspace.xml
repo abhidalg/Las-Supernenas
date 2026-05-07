@@ -4,19 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea423a5a-a550-4541-bf70-02f430cdd6eb" name="Changes" comment="SolicitudEntidad">
+    <list default="true" id="ea423a5a-a550-4541-bf70-02f430cdd6eb" name="Changes" comment="tests">
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interfaz/SolicitudRepositorio.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfaz/SolicitudRepositorio.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logica/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/Controller.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logica/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/Service.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/logica/Service.html" beforeDir="false" afterPath="$PROJECT_DIR$/docs/logica/Service.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logica/Controller.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/SolicitudController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logica/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/SolicitudService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/logica/Taller1Application.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/Taller1Application.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/EmailResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/EmailResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/ProblemDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/ProblemDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/ResultsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/ResultsResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/Solicitud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/Solicitud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/SolicitudEntidad.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/SolicitudEntidad.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/SolicitudResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/SolicitudResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modelo/ControllerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/modelo/SolicitudControllerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modelo/SolicitudResponseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/modelo/SolicitudResponseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logica/Controller.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logica/Service.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logica/Taller1Application.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/logica/Taller1Application.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/modelo/EmailResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modelo/EmailResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/modelo/ProblemDetails.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modelo/ProblemDetails.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/modelo/ResultsResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modelo/ResultsResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/modelo/Solicitud.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modelo/Solicitud.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/modelo/SolicitudResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modelo/SolicitudResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/modelo/ControllerTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/modelo/SolicitudResponseTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/modelo/SolicitudTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,12 +48,12 @@
     &quot;assignee&quot;: &quot;elferngom&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">{
-  &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/abhidalg/Las-Supernenas.git&quot;,
-    &quot;accountId&quot;: &quot;95f13261-132e-421d-9892-a2cd7520e980&quot;
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/abhidalg/Las-Supernenas.git",
+    "accountId": "fcc0bfa8-5b78-45d4-8621-a32e3f1271fd"
   }
-}</component>
+}]]></component>
   <component name="HttpClientOnboardingState">{
   &quot;isOnboardingCommentShown&quot;: true
 }</component>
@@ -97,7 +104,7 @@
     ]
   }
 }</component>
-  <component name="RunManager" selected="JUnit.ControllerTest">
+  <component name="RunManager" selected="Application.Taller1Application">
     <configuration name="Taller1Application" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="logica.Taller1Application" />
       <module name="taller1" />
@@ -111,7 +118,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SolicitudControllerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="taller1" />
       <extension name="coverage">
         <pattern>
@@ -120,13 +127,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="modelo" />
-      <option name="MAIN_CLASS_NAME" value="modelo.ControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="modelo.SolicitudControllerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControllerTest.solicitar_BodyInvalido_Retorna400" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SolicitudControllerTest.solicitar_BodyInvalido_Retorna400" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="taller1" />
       <extension name="coverage">
         <pattern>
@@ -135,14 +142,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="modelo" />
-      <option name="MAIN_CLASS_NAME" value="modelo.ControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="modelo.SolicitudControllerTest" />
       <option name="METHOD_NAME" value="solicitar_BodyInvalido_Retorna400" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControllerTest.solicitar_ConDatosValidos_Retorna201" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SolicitudControllerTest.solicitar_ConDatosValidos_Retorna201" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="taller1" />
       <extension name="coverage">
         <pattern>
@@ -151,14 +158,14 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="modelo" />
-      <option name="MAIN_CLASS_NAME" value="modelo.ControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="modelo.SolicitudControllerTest" />
       <option name="METHOD_NAME" value="solicitar_ConDatosValidos_Retorna201" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ControllerTest.solicitar_FaltaNombreUsuario_Retorna400" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SolicitudControllerTest.solicitar_FaltaNombreUsuario_Retorna400" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="taller1" />
       <extension name="coverage">
         <pattern>
@@ -167,7 +174,7 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="modelo" />
-      <option name="MAIN_CLASS_NAME" value="modelo.ControllerTest" />
+      <option name="MAIN_CLASS_NAME" value="modelo.SolicitudControllerTest" />
       <option name="METHOD_NAME" value="solicitar_FaltaNombreUsuario_Retorna400" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -183,19 +190,19 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ControllerTest" />
-        <item itemvalue="JUnit.ControllerTest.solicitar_BodyInvalido_Retorna400" />
-        <item itemvalue="JUnit.ControllerTest.solicitar_FaltaNombreUsuario_Retorna400" />
-        <item itemvalue="JUnit.ControllerTest.solicitar_ConDatosValidos_Retorna201" />
         <item itemvalue="Application.Taller1Application" />
+        <item itemvalue="JUnit.SolicitudControllerTest" />
+        <item itemvalue="JUnit.SolicitudControllerTest.solicitar_BodyInvalido_Retorna400" />
+        <item itemvalue="JUnit.SolicitudControllerTest.solicitar_FaltaNombreUsuario_Retorna400" />
+        <item itemvalue="JUnit.SolicitudControllerTest.solicitar_ConDatosValidos_Retorna201" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-125ca727e0f0-intellij.indexing.shared.core-IU-243.24978.46" />
-        <option value="bundled-js-predefined-d6986cc7102b-76f8388c3a79-JavaScript-IU-243.24978.46" />
+        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
+        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
       </set>
     </attachedChunks>
   </component>
@@ -213,6 +220,7 @@
       <workItem from="1777382532120" duration="3291000" />
       <workItem from="1777385929801" duration="1437000" />
       <workItem from="1777988507714" duration="631000" />
+      <workItem from="1778144442493" duration="8255000" />
     </task>
     <task id="LOCAL-00001" summary="http">
       <option name="closed" value="true" />
