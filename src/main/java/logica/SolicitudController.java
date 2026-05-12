@@ -67,4 +67,18 @@ public class SolicitudController {
         }
         return solicitudService.devolverToken(usuario, datos);
     }
+    @PostMapping("/solicitud")
+    public String solicitudForm(
+            @RequestParam Map<String, String> params,
+            Model model) {
+
+        String usuario = params.getOrDefault("nombreUsuario", "anonimo");
+        Solicitud datos = new Solicitud();
+
+        SolicitudResponse respuesta = solicitudService.devolverToken(usuario, datos);
+
+        model.addAttribute("token", respuesta.getTokenSolicitud());
+        return "welcome"; // la vista que muestra el token
+
+    }
 }

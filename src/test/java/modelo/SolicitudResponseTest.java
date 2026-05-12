@@ -17,7 +17,8 @@ class SolicitudResponseTest {
     }
     @Test
     void probarGeneracionDeToken() {
-        SolicitudService solicitudService = new SolicitudService();
+        interfaz.SolicitudRepositorio mockRepo = org.mockito.Mockito.mock(interfaz.SolicitudRepositorio.class);
+        SolicitudService solicitudService = new SolicitudService(mockRepo);
         Solicitud datosMock = new Solicitud();
 
         SolicitudResponse response = solicitudService.devolverToken("usuarioPrueba", datosMock);

@@ -1,5 +1,7 @@
 package modelo;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
  * Modelo de respuesta estándar tras una solicitud de token exitosa.
  * Incluye el identificador único (token) para futuras consultas, así como
@@ -9,11 +11,13 @@ public class SolicitudResponse {
     /**
      * Indica si la solicitud se completó correctamente.
      */
+    @JsonProperty("done")
     private boolean done;
 
     /**
      * Identificador único (token) generado para la operación.
      */
+    @JsonProperty("tokenSolicitud")
     private int tokenSolicitud;
 
     /**

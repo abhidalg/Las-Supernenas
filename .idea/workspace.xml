@@ -4,7 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ea423a5a-a550-4541-bf70-02f430cdd6eb" name="Changes" comment="funciona" />
+    <list default="true" id="ea423a5a-a550-4541-bf70-02f430cdd6eb" name="Changes" comment="funciona">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logica/SolicitudController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/SolicitudController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/logica/SolicitudService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/SolicitudService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/ResultsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/ResultsResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/SolicitudResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/SolicitudResponse.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/modelo/SolicitudResponseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/modelo/SolicitudResponseTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/modelo/ResultsResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modelo/ResultsResponse.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/modelo/SolicitudResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modelo/SolicitudResponse.class" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -28,12 +37,12 @@
     &quot;assignee&quot;: &quot;elferngom&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/abhidalg/Las-Supernenas.git",
-    "accountId": "fcc0bfa8-5b78-45d4-8621-a32e3f1271fd"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/abhidalg/Las-Supernenas.git&quot;,
+    &quot;accountId&quot;: &quot;fcc0bfa8-5b78-45d4-8621-a32e3f1271fd&quot;
   }
-}]]></component>
+}</component>
   <component name="HttpClientOnboardingState">{
   &quot;isOnboardingCommentShown&quot;: true
 }</component>
@@ -201,6 +210,7 @@
       <workItem from="1777385929801" duration="1437000" />
       <workItem from="1777988507714" duration="631000" />
       <workItem from="1778144442493" duration="8451000" />
+      <workItem from="1778591128187" duration="8182000" />
     </task>
     <task id="LOCAL-00001" summary="http">
       <option name="closed" value="true" />
@@ -258,7 +268,15 @@
       <option name="project" value="LOCAL" />
       <updated>1778163400330</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="funciona">
+      <option name="closed" value="true" />
+      <created>1778591217845</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1778591217845</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
