@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="ea423a5a-a550-4541-bf70-02f430cdd6eb" name="Changes" comment="funciona">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logica/SolicitudController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/SolicitudController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/logica/SolicitudService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/logica/SolicitudService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/modelo/ResultsResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/ResultsResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/modelo/SolicitudResponse.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/modelo/SolicitudResponse.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/modelo/SolicitudResponseTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/modelo/SolicitudResponseTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/modelo/ResultsResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modelo/ResultsResponse.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/modelo/SolicitudResponse.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/modelo/SolicitudResponse.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -190,8 +184,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-jdk-9823dce3aa75-bf35d07a577b-intellij.indexing.shared.core-IU-252.28238.7" />
-        <option value="bundled-js-predefined-d6986cc7102b-a71380e98a7c-JavaScript-IU-252.28238.7" />
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.30387.90" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.30387.90" />
       </set>
     </attachedChunks>
   </component>
@@ -211,6 +205,7 @@
       <workItem from="1777988507714" duration="631000" />
       <workItem from="1778144442493" duration="8451000" />
       <workItem from="1778591128187" duration="8182000" />
+      <workItem from="1779195796383" duration="1243000" />
     </task>
     <task id="LOCAL-00001" summary="http">
       <option name="closed" value="true" />
