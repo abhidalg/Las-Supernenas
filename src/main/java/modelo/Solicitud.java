@@ -57,14 +57,14 @@ public class Solicitud {
     /**
      * Obtiene la lista de los nombres de las entidades de la solicitud.
      *
-     * @return Una {@link List} de cadenas de texto con los nombres de las entidades.
+     * @return Una {@link List} de cadenas de texto con los nombres de las entidades
      */
     public List<String> getNombreEntidades(){
         return this.nombreEntidades;
     }
 
     /**
-     * Establece la lista de los nombres de las entidades para la solicitud.
+     * Establece la lista de los nombres de las entidades para la solicitud
      *
      * @param nombreEntidades La lista de cadenas de texto que se desea asignar como nombres de entidades.
      */

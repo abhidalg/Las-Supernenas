@@ -179,9 +179,9 @@ public class SolicitudEntidad {
     public LocalDateTime getFechaCreacion() { return fechaCreacion; }
 
     /**
-     * Establece la fecha y hora de creación de la entidad.
+     * Establece la fecha y hora de creación de la entidad
      *
-     * @param fechaCreacion La fecha y hora a establecer.
+     * @param fechaCreacion La fecha y hora a establecer
      */
     public void setFechaCreacion(LocalDateTime fechaCreacion) { this.fechaCreacion = fechaCreacion; }
 }

@@ -56,9 +56,9 @@ public class EmailResponse {
     public String getErrorMessage() { return errorMessage; }
 
     /**
-     * Establece un mensaje de error detallado para la respuesta.
+     * Establece un mensaje de error detallado para la respuesta
      *
-     * @param errorMessage El mensaje de error que se desea asociar a esta respuesta.
+     * @param errorMessage El mensaje de error que se desea asociar a esta respuesta
      */
     public void setErrorMessage(String errorMessage) { this.errorMessage = errorMessage; }
 }

@@ -83,16 +83,16 @@ public class SolicitudResponse {
     public void setTokenSolicitud(int tokenSolicitud) { this.tokenSolicitud = tokenSolicitud; }
 
     /**
-     * Obtiene el mensaje de error asociado a la respuesta, si lo hay.
+     * Obtiene el mensaje de error asociado a la respuesta, si lo hay
      *
-     * @return Un {@link String} con el mensaje de error.
+     * @return Un {@link String} con el mensaje de error
      */
     public String getErrorMessage() { return errorMessage; }
 
     /**
-     * Establece un mensaje de error para esta respuesta.
+     * Establece un mensaje de error para esta respuesta
      *
-     * @param errorMessage El mensaje de error descriptivo a asignar.
+     * @param errorMessage El mensaje de error descriptivo a asignar
      */
     public void setErrorMessage(String errorMessage) { this.errorMessage = errorMessage; }
 

@@ -20,13 +20,13 @@ public class ResultsResponse {
     private String data;
 
     /**
-     * Constructor por defecto de la clase ResultsResponse.
+     * Constructor por defecto de la clase ResultsResponse
      * Crea una instancia vacía
      */
     public ResultsResponse() {}
 
     /**
-     * Constructor parametrizado para inicializar una respuesta completa de resultados.
+     * Constructor parametrizado para inicializar una respuesta completa de resultados
      *
      * @param done           {@code true} si la operación fue exitosa
      * @param tokenSolicitud El identificador único de la solicitud

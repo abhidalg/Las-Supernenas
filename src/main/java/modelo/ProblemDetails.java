@@ -8,12 +8,12 @@ package modelo;
  */
 public class ProblemDetails {
     /**
-     * Una referencia URI que identifica el tipo de problema.
+     * Una referencia URI que identifica el tipo de problema
      */
     private String type;
 
     /**
-     * Un resumen corto y legible por humanos sobre el tipo de problema.
+     * Un resumen corto y legible por humanos sobre el tipo de problema
      */
     private String title;
 

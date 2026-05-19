@@ -10,22 +10,22 @@ import java.util.Map;
 /**
  * Controlador REST que expone los endpoints para la gestión de solicitudes.
  * Se encarga de interceptar las peticiones HTTP del cliente, delegar la lógica
- * de negocio al servicio correspondiente y devolver la respuesta adecuada.
+ * de negocio al servicio correspondiente y devolver la respuesta adecuada
  */
 @org.springframework.stereotype.Controller
 @RequestMapping
 public class SolicitudController {
 
     /**
-     * Instancia del servicio que contiene la lógica de negocio subyacente.
-     * Gestiona la creación de tokens y la obtención de datos para el grid.
+     * Instancia del servicio que contiene la lógica de negocio subyacente
+     * Gestiona la creación de tokens y la obtención de datos para el grid
      */
     private final SolicitudService solicitudService;
 
     /**
-     * Constructor que recibe el servicio por inyección de dependencias de Spring.
+     * Constructor que recibe el servicio por inyección de dependencias de Spring
      *
-     * @param solicitudService El servicio con la lógica de negocio.
+     * @param solicitudService El servicio con la lógica de negocio
      */
     public SolicitudController(SolicitudService solicitudService) {
         this.solicitudService = solicitudService;
