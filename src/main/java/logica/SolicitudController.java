@@ -5,7 +5,9 @@ import modelo.SolicitudResponse;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.ui.Model;
 
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 /**
  * Controlador REST que expone los endpoints para la gestión de solicitudes.
@@ -74,11 +76,28 @@ public class SolicitudController {
             Model model) {
 
         String usuario = params.getOrDefault("nombreUsuario", "anonimo");
-        Solicitud datos = new Solicitud();
+
+        List<Integer> cantidades = params.entrySet().stream()
+                .filter(entry -> entry.getKey().startsWith("Num. de"))
+                .map(entry -> {
+                    try {
+                        return Integer.parseInt(entry.getValue());
+                    } catch (NumberFormatException e) {
+                        return 0;
+                    }
+                })
+                .collect(Collectors.toList());
+
+        List<String> nombres = params.keySet().stream()
+                .filter(key -> key.startsWith("Num. de"))
+                .map(key -> key.replace("Num. de", "").trim())
+                .collect(Collectors.toList());
+
+        Solicitud datos = new Solicitud(cantidades, nombres);
 
         SolicitudResponse respuesta = solicitudService.devolverToken(usuario, datos);
 
-        model.addAttribute("token", respuesta.getTokenSolicitud());
+        model.addAttribute("token", respuesta);
         return "welcome"; // la vista que muestra el token
 
     }

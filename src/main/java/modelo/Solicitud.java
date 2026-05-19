@@ -1,5 +1,6 @@
 package modelo;
 
+import java.util.ArrayList;
 import java.util.List;
 /**
  * Representa la entidad de datos enviada por el cliente.
@@ -28,12 +29,10 @@ public class Solicitud {
         this.nombreEntidades=nombreEntidades;
     }
 
-    /**
-     * Constructor por defecto de la clase Solicitud.
-     * Crea una instancia vacía sin inicializar las listas.
-     */
-    public Solicitud() {
 
+    public Solicitud() {
+        this.cantidadesIniciales = new ArrayList<>();
+        this.nombreEntidades = new ArrayList<>();
     }
 
     /**

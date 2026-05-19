@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.stream.Collectors;
+
 /**
  * Servicio de la capa de negocio encargado de gestionar el procesamiento de las solicitudes
  */
@@ -21,17 +22,32 @@ public class SolicitudService {
         this.repositorio = repositorio;
     }
 
-    /**
-     * Procesa una nueva solicitud de simulación: genera un token único aleatorio de 8 cifras,
-     * ejecuta el algoritmo de rebotes
-     *
-     * @param usuario El nombre del usuario que realiza la petición de simulación
-     * @param datos   Objeto con los parámetros de configuración iniciales de la solicitud
-     * @return Un objeto {@link SolicitudResponse} con el token generado y el estado de la operación
-     */
     public SolicitudResponse devolverToken(String usuario, Solicitud datos) {
-        int token = 10000000 + random.nextInt(90000000);
-        String resultadoSimulado = generarEstelaRebotes();
+        if (datos == null) {
+            datos = new Solicitud();
+        }
+
+        List<Integer> listaCantidades = datos.getCantidadesIniciales() != null
+                ? datos.getCantidadesIniciales()
+                : new ArrayList<>();
+
+        // OBTENEMOS EL ÚLTIMO NÚMERO (Si la lista está vacía, por defecto usamos 0)
+        int ultimoNumero = !listaCantidades.isEmpty()
+                ? listaCantidades.get(listaCantidades.size() - 1)
+                : 0;
+
+        // OPERACIÓN MATEMÁTICA: El primer dígito del token será (ultimoNumero % 9) + 1
+        long digitoInicial = (Math.abs(ultimoNumero) % 9) + 1;
+
+        // El resto del token se genera con el tiempo actual (7 dígitos fijos)
+        long restoTiempo = System.currentTimeMillis() % 10000000;
+        String tiempoFormateado = String.format("%07d", Math.abs(restoTiempo));
+
+        // Formamos el token uniendo el dígito inicial con el tiempo
+        int token = Integer.parseInt(digitoInicial + tiempoFormateado);
+
+        // Pasamos el token y el último número a la simulación
+        String resultadoSimulado = generarEstelaRebotes(token, ultimoNumero);
 
         SolicitudEntidad entidad = new SolicitudEntidad();
         entidad.setNombreUsuario(usuario);
@@ -49,66 +65,32 @@ public class SolicitudService {
 
         return respuesta;
     }
-    /**
-     * Obtiene y procesa las métricas de la simulación para construir las propiedades del Grid.
-     * filtra, transforma y recolecta las líneas de la estela en estructuras mapeadas de coordenadas
-     *
-     * @param token El identificador único numérico de la solicitud a consultar.
-     * @return Un {@link Map} que contiene el conteo de líneas, el mapa de coordenadas con sus colores y el tiempo máximo
-     */
-    public Map<String, Object> obtenerDatosGrid(int token) {
-        String datosGuardados = generarEstelaRebotes();
-        String[] lineas = datosGuardados.split("\n");
-        int count = Integer.parseInt(lineas[0].trim());
 
-        Map<String, String> colors = Arrays.stream(lineas)
-                .skip(1)
-                .map(String::trim)
-                .filter(l -> !l.isEmpty())
-                .map(l -> l.split(","))
-                .filter(p -> p.length >= 4)
-                .collect(Collectors.toMap(
-                        p -> p[0] + "-" + p[1] + "-" + p[2],
-                        p -> p[3],
-                        (existente, nuevo) -> nuevo
-                ));
-
-        int maxTime = Arrays.stream(lineas)
-                .skip(1)
-                .map(l -> l.split(","))
-                .filter(p -> p.length >= 4)
-                .mapToInt(p -> Integer.parseInt(p[0]))
-                .max().orElse(0);
-
-        Map<String, Object> resultado = new HashMap<>();
-        resultado.put("count", count);
-        resultado.put("colors", colors);
-        resultado.put("maxTime", maxTime);
-
-        return resultado;
-    }
-    /**
-     * Recupera la secuencia completa e histórica de la simulación de rebotes en formato de texto
-     *
-     * @param token El identificador único numérico de la solicitud
-     * @return Una cadena de texto multilínea que representa la estela de la simulación
-     */
-    public String obtenerGridString(int token) {
-        return generarEstelaRebotes();
-    }
-    /**
-     * Ejecuta el algoritmo principal de la simulación de movimiento de 4 partículas de colores
-     * Controla de manera iterativa los desplazamientos de las partículas dentro de un espacio de 12x12
-     *
-     * @return Una cadena de texto formateada donde la primera línea indica el ancho del tablero,
-     * seguido de las trazas de cada partícula.
-     */
-    private String generarEstelaRebotes() {
+    private String generarEstelaRebotes(int token, int ultimoNumero) {
         int ancho = 12;
         int frames = 51;
         String[] colores = {"red", "green", "purple", "yellow"};
 
-        int[][] pos = {{0, 1}, {0, ancho - 2}, {ancho - 1, 2}, {ancho - 1, ancho - 3}};
+        int[][] pos;
+
+        // SELECCIÓN DE ESTADO POR MÚLTIPLOS DE 3 DEL ÚLTIMO NÚMERO
+        int residuo = Math.abs(ultimoNumero) % 3;
+
+        if (residuo == 0) {
+            // ESTADO 1: Múltiplo exacto de 3 (Esquinas)
+            System.out.println("🎲 Último número (" + ultimoNumero + ") es MÚLTIPLO DE 3. Activado: ESTADO 1 (Esquinas)");
+            pos = new int[][]{{0, 1}, {0, ancho - 2}, {ancho - 1, 2}, {ancho - 1, ancho - 3}};
+        } else if (residuo == 1) {
+            // ESTADO 2: Múltiplo de 3 + 1 (Centro)
+            System.out.println("🎲 Último número (" + ultimoNumero + ") residuo 1. Activado: ESTADO 2 (Centro)");
+            pos = new int[][]{{5, 5}, {5, 6}, {6, 5}, {6, 6}};
+        } else {
+            // ESTADO 3: Múltiplo de 3 + 2 (Lineal)
+            System.out.println("🎲 Último número (" + ultimoNumero + ") residuo 2. Activado: ESTADO 3 (Lineal)");
+            pos = new int[][]{{6, 0}, {6, ancho - 1}, {0, 6}, {ancho - 1, 6}};
+        }
+
+        // Direcciones de movimiento iniciales diagonales
         int[][] dir = {{1, 1}, {1, -1}, {-1, 1}, {-1, -1}};
 
         Map<String, String> gridAcumulado = new HashMap<>();
@@ -147,13 +129,13 @@ public class SolicitudService {
                 if (huboChoque) {
                     int nuevaSuerte = random.nextInt(3);
 
-                    if (nuevaSuerte == 0) { // Se vuelve Diagonal
+                    if (nuevaSuerte == 0) {
                         dir[c][0] = random.nextBoolean() ? 1 : -1;
                         dir[c][1] = random.nextBoolean() ? 1 : -1;
-                    } else if (nuevaSuerte == 1) { // Se vuelve Horizontal puro
+                    } else if (nuevaSuerte == 1) {
                         dir[c][0] = 0;
                         dir[c][1] = random.nextBoolean() ? 1 : -1;
-                    } else { // Se vuelve Vertical puro
+                    } else {
                         dir[c][0] = random.nextBoolean() ? 1 : -1;
                         dir[c][1] = 0;
                     }
@@ -175,6 +157,56 @@ public class SolicitudService {
 
         return ancho + "\n" + String.join("\n", celdas);
     }
+
+    /**
+     * Obtiene y procesa las métricas de la simulación para construir las propiedades del Grid.
+     * filtra, transforma y recolecta las líneas de la estela en estructuras mapeadas de coordenadas
+     *
+     * @param token El identificador único numérico de la solicitud a consultar.
+     * @return Un {@link Map} que contiene el conteo de líneas, el mapa de coordenadas con sus colores y el tiempo máximo
+     */
+    public Map<String, Object> obtenerDatosGrid(int token) {
+        String datosGuardados = generarEstelaRebotes(token, token);
+        String[] lineas = datosGuardados.split("\n");
+        int count = Integer.parseInt(lineas[0].trim());
+
+        Map<String, String> colors = Arrays.stream(lineas)
+                .skip(1)
+                .map(String::trim)
+                .filter(l -> !l.isEmpty())
+                .map(l -> l.split(","))
+                .filter(p -> p.length >= 4)
+                .collect(Collectors.toMap(
+                        p -> p[0] + "-" + p[1] + "-" + p[2],
+                        p -> p[3],
+                        (existente, nuevo) -> nuevo
+                ));
+
+        int maxTime = Arrays.stream(lineas)
+                .skip(1)
+                .map(l -> l.split(","))
+                .filter(p -> p.length >= 4)
+                .mapToInt(p -> Integer.parseInt(p[0]))
+                .max().orElse(0);
+
+        Map<String, Object> resultado = new HashMap<>();
+        resultado.put("count", count);
+        resultado.put("colors", colors);
+        resultado.put("maxTime", maxTime);
+
+        return resultado;
+    }
+
+    /**
+     * Recupera la secuencia completa e histórica de la simulación de rebotes en formato de texto
+     *
+     * @param token El identificador único numérico de la solicitud
+     * @return Una cadena de texto multilínea que representa la estela de la simulación
+     */
+    public String obtenerGridString(int token) {
+        return generarEstelaRebotes(token, token);
+    }
+
     /**
      * Agrupa y contabiliza las casillas totales conquistadas por cada color al final de la simulación,
      *
