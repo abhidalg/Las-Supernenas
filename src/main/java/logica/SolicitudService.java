@@ -8,7 +8,9 @@ import org.springframework.stereotype.Service;
 
 import java.util.*;
 import java.util.stream.Collectors;
-
+/**
+ * Servicio de la capa de negocio encargado de gestionar el procesamiento de las solicitudes
+ */
 @Service
 public class SolicitudService {
 
@@ -19,6 +21,14 @@ public class SolicitudService {
         this.repositorio = repositorio;
     }
 
+    /**
+     * Procesa una nueva solicitud de simulación: genera un token único aleatorio de 8 cifras,
+     * ejecuta el algoritmo de rebotes
+     *
+     * @param usuario El nombre del usuario que realiza la petición de simulación
+     * @param datos   Objeto con los parámetros de configuración iniciales de la solicitud
+     * @return Un objeto {@link SolicitudResponse} con el token generado y el estado de la operación
+     */
     public SolicitudResponse devolverToken(String usuario, Solicitud datos) {
         int token = 10000000 + random.nextInt(90000000);
         String resultadoSimulado = generarEstelaRebotes();
@@ -39,14 +49,18 @@ public class SolicitudService {
 
         return respuesta;
     }
-
+    /**
+     * Obtiene y procesa las métricas de la simulación para construir las propiedades del Grid.
+     * filtra, transforma y recolecta las líneas de la estela en estructuras mapeadas de coordenadas
+     *
+     * @param token El identificador único numérico de la solicitud a consultar.
+     * @return Un {@link Map} que contiene el conteo de líneas, el mapa de coordenadas con sus colores y el tiempo máximo
+     */
     public Map<String, Object> obtenerDatosGrid(int token) {
-        // Modo seguro: Generamos la estela al vuelo para evitar errores 500
         String datosGuardados = generarEstelaRebotes();
         String[] lineas = datosGuardados.split("\n");
         int count = Integer.parseInt(lineas[0].trim());
 
-        // Comprensión de listas con Streams para mapear colores
         Map<String, String> colors = Arrays.stream(lineas)
                 .skip(1)
                 .map(String::trim)
@@ -73,11 +87,22 @@ public class SolicitudService {
 
         return resultado;
     }
-
+    /**
+     * Recupera la secuencia completa e histórica de la simulación de rebotes en formato de texto
+     *
+     * @param token El identificador único numérico de la solicitud
+     * @return Una cadena de texto multilínea que representa la estela de la simulación
+     */
     public String obtenerGridString(int token) {
         return generarEstelaRebotes();
     }
-
+    /**
+     * Ejecuta el algoritmo principal de la simulación de movimiento de 4 partículas de colores
+     * Controla de manera iterativa los desplazamientos de las partículas dentro de un espacio de 12x12
+     *
+     * @return Una cadena de texto formateada donde la primera línea indica el ancho del tablero,
+     * seguido de las trazas de cada partícula.
+     */
     private String generarEstelaRebotes() {
         int ancho = 12;
         int frames = 51;
@@ -150,7 +175,11 @@ public class SolicitudService {
 
         return ancho + "\n" + String.join("\n", celdas);
     }
-
+    /**
+     * Agrupa y contabiliza las casillas totales conquistadas por cada color al final de la simulación,
+     *
+     * @param grid El mapa que contiene las posiciones y colores del tablero
+     */
     private void imprimirResultadosFinales(Map<String, String> grid) {
         Map<String, Long> puntos = grid.values().stream()
                 .collect(java.util.stream.Collectors.groupingBy(c -> c, java.util.stream.Collectors.counting()));
