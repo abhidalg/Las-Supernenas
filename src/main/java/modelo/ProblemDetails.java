@@ -18,7 +18,7 @@ public class ProblemDetails {
     private String title;
 
     /**
-     * El código de estado HTTP asociado a esta ocurrencia específica del problema.
+     * El código de estado HTTP asociado a esta ocurrencia específica del problema
      */
     private Integer status;
 

@@ -1,6 +1,6 @@
 package modelo;
 /**
- * Clase que representa la respuesta con los resultados de una simulación o solicitud.
+ * Clase que representa la respuesta con los resultados de una simulación o solicitud
  * Contiene el estado de finalización del proceso, el identificador único asociado
  * y la cadena de datos que describe el estado final del grid.
  */

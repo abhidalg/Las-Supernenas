@@ -3,7 +3,7 @@ package modelo;
 import java.util.List;
 /**
  * Representa la entidad de datos enviada por el cliente.
- * Contiene las listas de cantidades y nombres de entidades necesarias para el taller.
+ * Contiene las listas de cantidades y nombres de entidades necesarias para el taller
  */
 public class Solicitud {
     /**

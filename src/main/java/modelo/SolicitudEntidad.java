@@ -167,14 +167,14 @@ public class SolicitudEntidad {
     /**
      * Establece los datos de resultado de la solicitud.
      *
-     * @param resultadoData La cadena de texto con los datos a almacenar.
+     * @param resultadoData La cadena de texto con los datos a almacenar
      */
     public void setResultadoData(String resultadoData) { this.resultadoData = resultadoData; }
 
     /**
      * Obtiene la fecha y hora en que se creó la entidad.
      *
-     * @return Un objeto {@link LocalDateTime} que representa la fecha de creación.
+     * @return Un objeto {@link LocalDateTime} que representa la fecha de creación
      */
     public LocalDateTime getFechaCreacion() { return fechaCreacion; }
 

@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  */
 public class SolicitudResponse {
     /**
-     * Indica si la solicitud se completó correctamente.
+     * Indica si la solicitud se completó correctamente
      */
     @JsonProperty("done")
     private boolean done;

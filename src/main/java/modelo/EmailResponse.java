@@ -44,14 +44,14 @@ public class EmailResponse {
     /**
      * Establece el estado de éxito o fracaso de la operación del correo electrónico.
      *
-     * @param done {@code true} para marcar la operación como exitosa, {@code false} para marcarla como fallida.
+     * @param done {@code true} para marcar la operación como exitosa, {@code false} para marcarla como fallida
      */
     public void setDone(boolean done) { this.done = done; }
 
     /**
      * Obtiene el mensaje de error asociado a la operación, si existe.
      *
-     * @return Un {@link String} que contiene el mensaje de error, o {@code null} si no hubo errores.
+     * @return Un {@link String} que contiene el mensaje de error, o {@code null} si no hubo errores
      */
     public String getErrorMessage() { return errorMessage; }
 
